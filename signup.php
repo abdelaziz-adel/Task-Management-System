@@ -7,12 +7,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = trim($_POST['email']);
     $password = $_POST['password'];
 
-    // check if email already used
+    //email already used?
     $check = $pdo->prepare("SELECT id FROM users WHERE email = ?");
     $check->execute([$email]);
 
     if ($check->fetch()) {
         $error = "This email is already registered";
+    } else if (strlen($password) < 6) {
+        $error = "Password must be at least 6 characters";
     } else {
         $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 

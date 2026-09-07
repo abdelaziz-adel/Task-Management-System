@@ -1,5 +1,13 @@
 <?php
 session_start();
+
+if (isset($_GET['logout'])) {
+    session_destroy();
+    setcookie('remember_user', '', time() - 3600, "/");
+    header('Location: login.php');
+    exit;
+}
+
 require 'db.php';
 $error = "";
 

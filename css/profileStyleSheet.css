@@ -1,8 +1,7 @@
 .profile-container {
     width: 100%;
-    max-width: 700px;
     margin: 50px auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 .profile-title {
@@ -54,4 +53,104 @@
 
 .new-password {
     margin-top: 4px;
+}
+
+.btn-login {
+    background-color: #14B8A6;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+    border: none;
+}
+
+.btn-login:hover {
+    background-color: #109385;
+    color: #ffffff;
+}
+
+.field-with-icon {
+    position: relative;
+}
+
+.field-with-icon .custom-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 40px;
+}
+
+.custom-input[readonly] {
+    color: #6b7280;
+    cursor: not-allowed;
+    background-color: #10171d;
+}
+
+.custom-input.editing {
+    color: #ffffff;
+    cursor: text;
+    background-color: #151E26;
+}
+
+.edit-icon-btn,
+.save-icon-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.edit-icon-btn {
+    color: #71808C;
+}
+
+.edit-icon-btn:hover {
+    color: #ffffff;
+}
+
+.save-icon-btn {
+    color: #14B8A6;
+}
+
+.save-icon-btn:hover {
+    color: #1cd6c1;
+}
+
+/* confirm password popup */
+.confirm-modal-content {
+    background-color: #151E26;
+    color: #ffffff;
+    border-radius: 12px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.modal-error {
+    color: #ff6b6b;
+    font-size: 13px;
+}
+
+.page-message {
+    text-align: center;
+    font-size: 14px;
+}
+
+
+.btn-logout {
+    background-color: #ff6b6b;
+    color: #ffffff;
+    padding: 12px;
+    font-weight: 600;
+    font-size: 15px;
+    border-radius: 8px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.btn-logout:hover {
+    background-color: #ff7878;
 }

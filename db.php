@@ -10,3 +10,10 @@ try {
 } catch (PDOException $e) {
     die("Error: " . $e->getMessage());
 }
+
+function maskEmail($email) {
+    $parts = explode('@', $email);
+    if (count($parts) !== 2) return $email;
+    $visible = mb_substr($parts[0], 0, 2);
+    return $visible . '****@' . $parts[1];
+}
