@@ -1,3 +1,28 @@
+<?php
+session_start();
+require 'db.php';
+$error = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    $stmt = $pdo->prepare("SELECT * FROM users WHERE email = ?");
+    $stmt->execute([$email]);
+    $user = $stmt->fetch();
+
+    if ($user && password_verify($password, $user['password'])) {
+        $_SESSION['user_id'] = $user['id'];
+        $_SESSION['user_name'] = $user['name'];
+
+        header('Location: dashboard.php');
+        exit;
+    } else {
+        $error = "Invalid email or password";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -14,6 +39,10 @@
             <img src="assets/TM_logo.svg" alt="TMS Logo" width="135">
             <h2 class="login-title">Log in to your account</h2>
         </div>
+        
+        <?php if ($error): ?>
+            <p style="color:#ff6b6b; text-align:center; font-size:14px;"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
 
         <form action="login.php" method="POST">
             <input type="email" name="email" class="form-control custom-input top-input" placeholder="Email address" required>
@@ -27,6 +56,7 @@
                 <a href="#" class="link-purple">Forgot password?</a>
             </div>
 
+
             <button type="submit" class="btn w-100 btn-login">Log in</button>
         </form>
 
@@ -34,7 +64,5 @@
             Not a member? <a href="signup.php" class="link-purple">Sign up</a>
         </p>
     </div>
-
-    <script src="js/loginScript.js"></script>
 </body>
 </html>

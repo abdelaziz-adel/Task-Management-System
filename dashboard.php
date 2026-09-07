@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/dashboardStyleSheet.css">
 </head>
@@ -18,12 +18,10 @@
 
         <div class="nav-links">
             <a href="tasks.php">Tasks</a>
-            <a href="profile.php" style="color: #2DD4BF">Profile</a>
+            <a href="profile.php">Profile</a>
         </div>
 
     </nav>
-
-    
 
 </body>
 </html>

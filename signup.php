@@ -1,3 +1,30 @@
+<?php
+require 'db.php';
+$error = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = trim($_POST['name']);
+    $email = trim($_POST['email']);
+    $password = $_POST['password'];
+
+    // check if email already used
+    $check = $pdo->prepare("SELECT id FROM users WHERE email = ?");
+    $check->execute([$email]);
+
+    if ($check->fetch()) {
+        $error = "This email is already registered";
+    } else {
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+
+        $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
+        $stmt->execute([$name, $email, $hashedPassword]);
+
+        header('Location: login.php');
+        exit;
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
@@ -15,8 +42,12 @@
             <h2 class="login-title">Sign up to Task Manager!</h2>
         </div>
 
+        <?php if ($error): ?>
+            <p style="color:#ff6b6b; text-align:center; font-size:14px;"><?= htmlspecialchars($error) ?></p>
+        <?php endif; ?>
+
         <form action="signup.php" method="POST">
-            <input type="name" name="name" class="form-control custom-input top-input" placeholder="Name" required>
+            <input type="text" name="name" class="form-control custom-input top-input" placeholder="Name" required>
             <input type="email" name="email" class="form-control custom-input middle-input" placeholder="Email address" required>
             <input type="password" name="password" class="form-control custom-input bottom-input" placeholder="Password" required>
 
@@ -30,7 +61,5 @@
             Already have an account? <a href="login.php" class="link-purple">Log in</a>
         </p>
     </div>
-
-    <script src="js/signupScript.js"></script>
 </body>
 </html>
