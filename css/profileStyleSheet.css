@@ -1,0 +1,57 @@
+.profile-container {
+    width: 100%;
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.profile-title {
+    color: #FFFFFF;
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 28px;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.profile-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.profile-field label {
+    color: #C5CED5;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.custom-input {
+    width: 100%;
+    background-color: #151E26;
+    border: 1px solid #263640;
+    color: #FFFFFF;
+    padding: 13px 14px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+}
+
+.custom-input::placeholder {
+    color: #71808C;
+}
+
+.custom-input:focus {
+    background-color: #151E26;
+    border-color: #14B8A6;
+    color: #FFFFFF;
+    box-shadow: 0 0 0 0.02rem rgba(20, 184, 166, 0.25);
+}
+
+.new-password {
+    margin-top: 4px;
+}
