@@ -1,9 +1,9 @@
 <?php
 session_start();
-require 'db.php';
+require 'api/db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
+    header('Location: api/login.php');
     exit;
 }
 
@@ -30,13 +30,13 @@ $maskedEmail = maskEmail($user['email']);
 
     <nav class="navbar">
 
-        <a href="dashboard.php" class="logo">
+        <a href="api/dashboard.php" class="logo">
             <img src="assets/TM_logo.svg" alt="Logo">
         </a>
 
         <div class="nav-links">
-            <a href="tasks.php">Tasks</a>
-            <a href="profile.php" style="color: #2DD4BF">Profile</a>
+            <a href="api/tasks.php">Tasks</a>
+            <a href="api/profile.php" style="color: #2DD4BF">Profile</a>
         </div>
 
     </nav>
@@ -76,7 +76,7 @@ $maskedEmail = maskEmail($user['email']);
                 </div>
             </div>
 
-            <a href="login.php?logout=1" class="btn btn-logout w-100">Logout</a>
+            <a href="api/login.php?logout=1" class="btn btn-logout w-100">Logout</a>
 
         </div>
 

@@ -4,11 +4,11 @@ session_start();
 if (isset($_GET['logout'])) {
     session_destroy();
     setcookie('remember_user', '', time() - 3600, "/");
-    header('Location: login.php');
+    header('Location: api/login.php');
     exit;
 }
 
-require 'db.php';
+require 'api/db.php';
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
 
-        header('Location: dashboard.php');
+        header('Location: api/dashboard.php');
         exit;
     } else {
         $error = "Invalid email or password";
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p style="color:#ff6b6b; text-align:center; font-size:14px;"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
 
-        <form action="login.php" method="POST">
+        <form action="api/login.php" method="POST">
             <input type="email" name="email" class="form-control custom-input top-input" placeholder="Email address" required>
             <input type="password" name="password" class="form-control custom-input bottom-input" placeholder="Password" required>
 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <p class="text-center bottom-text">
-            Not a member? <a href="signup.php" class="link-purple">Sign up</a>
+            Not a member? <a href="api/signup.php" class="link-purple">Sign up</a>
         </p>
     </div>
 </body>

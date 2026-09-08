@@ -1,5 +1,5 @@
 <?php
-require 'db.php';
+require 'api/db.php';
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $pdo->prepare("INSERT INTO users (name, email, password) VALUES (?, ?, ?)");
         $stmt->execute([$name, $email, $hashedPassword]);
 
-        header('Location: login.php');
+        header('Location: api/login.php');
         exit;
     }
 }
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p style="color:#ff6b6b; text-align:center; font-size:14px;"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
 
-        <form action="signup.php" method="POST">
+        <form action="api/signup.php" method="POST">
             <input type="text" name="name" class="form-control custom-input top-input" placeholder="Name" required>
             <input type="email" name="email" class="form-control custom-input middle-input" placeholder="Email address" required>
             <input type="password" name="password" class="form-control custom-input bottom-input" placeholder="Password" required>
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <p class="text-center bottom-text">
-            Already have an account? <a href="login.php" class="link-purple">Log in</a>
+            Already have an account? <a href="api/login.php" class="link-purple">Log in</a>
         </p>
     </div>
 </body>

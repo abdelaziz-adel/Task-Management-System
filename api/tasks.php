@@ -12,13 +12,13 @@
 
     <nav class="navbar">
 
-        <a href="dashboard.php" class="logo">
+        <a href="api/dashboard.php" class="logo">
             <img src="assets/TM_logo.svg" alt="Logo">
         </a>
 
         <div class="nav-links">
-            <a href="tasks.php" style="color: #2DD4BF">Tasks</a>
-            <a href="profile.php">Profile</a>
+            <a href="api/tasks.php" style="color: #2DD4BF">Tasks</a>
+            <a href="api/profile.php">Profile</a>
         </div>
 
     </nav>
