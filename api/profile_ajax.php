@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../db.php';
+require 'db.php';
 header('Content-Type: application/json');
 
 function respond($success, $extra = []) {

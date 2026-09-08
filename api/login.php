@@ -8,7 +8,7 @@ if (isset($_GET['logout'])) {
     exit;
 }
 
-require '../api/db.php';
+require 'db.php';
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
