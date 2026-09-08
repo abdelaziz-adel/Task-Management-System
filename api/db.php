@@ -18,7 +18,7 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
-
+ 
 function maskEmail($email) {
     $parts = explode('@', $email);
     if (count($parts) !== 2) return $email;
