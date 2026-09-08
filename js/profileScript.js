@@ -7,7 +7,7 @@ let activeField = null;
 let verifiedPassword = null;
 
 async function callServer(action, field, value = '') {
-    const res = await fetch('users/profile_ajax.php', {
+    const res = await fetch('api/profile_ajax.php', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ action, field, value, current_password: verifiedPassword })
