@@ -14,7 +14,7 @@
     { "src": "/dashboard.php", "dest": "/api/dashboard.php" },
     { "src": "/profile.php", "dest": "/api/profile.php" },
     { "src": "/tasks.php", "dest": "/api/tasks.php" },
-    { "src": "/profile_ajax.php", "dest": "/users/profile_ajax.php" },
+    { "src": "/profile_ajax.php", "dest": "/api/profile_ajax.php" },
     { "src": "/css/(.*)", "dest": "/css/$1" },
     { "src": "/js/(.*)", "dest": "/js/$1" },
     { "src": "/assets/(.*)", "dest": "/assets/$1" }
