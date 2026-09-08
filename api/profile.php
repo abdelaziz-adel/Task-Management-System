@@ -3,7 +3,7 @@ session_start();
 require 'db.php';
 
 if (!isset($_SESSION['user_id'])) {
-    header('Location: api/login.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -22,21 +22,21 @@ $maskedEmail = maskEmail($user['email']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/dashboardStyleSheet.css">
-    <link rel="stylesheet" href="css/profileStyleSheet.css?v=3">
+    <link rel="stylesheet" href="/css/dashboardStyleSheet.css">
+    <link rel="stylesheet" href="/css/profileStyleSheet.css?v=3">
 </head>
 
 <body>
 
     <nav class="navbar">
 
-        <a href="api/dashboard.php" class="logo">
+        <a href="dashboard.php" class="logo">
             <img src="assets/TM_logo.svg" alt="Logo">
         </a>
 
         <div class="nav-links">
-            <a href="api/tasks.php">Tasks</a>
-            <a href="api/profile.php" style="color: #2DD4BF">Profile</a>
+            <a href="tasks.php">Tasks</a>
+            <a href="profile.php" style="color: #2DD4BF">Profile</a>
         </div>
 
     </nav>
@@ -76,7 +76,7 @@ $maskedEmail = maskEmail($user['email']);
                 </div>
             </div>
 
-            <a href="api/login.php?logout=1" class="btn btn-logout w-100">Logout</a>
+            <a href="login.php?logout=1" class="btn btn-logout w-100">Logout</a>
 
         </div>
 
@@ -102,7 +102,7 @@ $maskedEmail = maskEmail($user['email']);
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/profileScript.js"></script>
+    <script src="/js/profileScript.js"></script>
 
 </body>
 </html>

@@ -4,7 +4,7 @@ session_start();
 if (isset($_GET['logout'])) {
     session_destroy();
     setcookie('remember_user', '', time() - 3600, "/");
-    header('Location: api/login.php');
+    header('Location: login.php');
     exit;
 }
 
@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
 
-        header('Location: api/dashboard.php');
+        header('Location: dashboard.php');
         exit;
     } else {
         $error = "Invalid email or password";
@@ -38,13 +38,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/loginStyleSheet.css">
+    <link rel="stylesheet" href="/css/loginStyleSheet.css">
 </head>
 <body class="d-flex align-items-center justify-content-center min-vh-100">
 
     <div class="login-box">
         <div class="text-center">
-            <img src="assets/TM_logo.svg" alt="TMS Logo" width="135">
+            <img src="/assets/TM_logo.svg" alt="TMS Logo" width="135">
             <h2 class="login-title">Log in to your account</h2>
         </div>
         
@@ -52,7 +52,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <p style="color:#ff6b6b; text-align:center; font-size:14px;"><?= htmlspecialchars($error) ?></p>
         <?php endif; ?>
 
-        <form action="api/login.php" method="POST">
+        <form action="login.php" method="POST">
             <input type="email" name="email" class="form-control custom-input top-input" placeholder="Email address" required>
             <input type="password" name="password" class="form-control custom-input bottom-input" placeholder="Password" required>
 
@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         </form>
 
         <p class="text-center bottom-text">
-            Not a member? <a href="api/signup.php" class="link-purple">Sign up</a>
+            Not a member? <a href="signup.php" class="link-purple">Sign up</a>
         </p>
     </div>
 </body>
