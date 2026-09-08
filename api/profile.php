@@ -1,6 +1,6 @@
 <?php
 session_start();
-require 'api/db.php';
+require '../api/db.php';
 
 if (!isset($_SESSION['user_id'])) {
     header('Location: api/login.php');

@@ -1,5 +1,5 @@
 <?php
-require 'api/db.php';
+require '../api/db.php';
 $error = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
