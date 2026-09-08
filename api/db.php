@@ -1,9 +1,9 @@
 <?php
-$host = getenv('DB_HOST');
-$port = getenv('DB_PORT');
-$dbname = getenv('DB_NAME');
-$username = getenv('DB_USER');
-$password = getenv('DB_PASSWORD');
+$host = "mysql-d329361-zezo-0934.d.aivencloud.com";
+$port = "17215";
+$dbname = "defaultdb";
+$username = "avnadmin";
+$password = "AVNS_Uv6VSiCtDxsnWrVz7UV";
 
 try {
     $pdo = new PDO(
@@ -18,7 +18,7 @@ try {
 } catch (PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
- 
+
 function maskEmail($email) {
     $parts = explode('@', $email);
     if (count($parts) !== 2) return $email;
