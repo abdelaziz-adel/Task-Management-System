@@ -30,7 +30,7 @@ $maskedEmail = maskEmail($user['email']);
 
     <nav class="navbar">
 
-        <a href="dashboard.php" class="logo">
+        <a href="tasks.php" class="logo">
             <img src="assets/TM_logo.svg" alt="Logo">
         </a>
 

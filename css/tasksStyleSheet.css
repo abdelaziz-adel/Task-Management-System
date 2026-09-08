@@ -1,0 +1,154 @@
+.tasks-container {
+    width: 100%;
+    margin: 50px auto;
+    padding: 0 40px;
+}
+
+h1, h2, h3 {
+    color: #ffffff;
+}
+
+/* ---- filter / action buttons ---- */
+.btn-primary {
+    background-color: #2DD4BF;
+    border-color: #2DD4BF;
+    color: #0b0e1a;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 5px 8px;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+
+.btn-primary:hover {
+    background-color: #24b8a5;
+    border-color: #24b8a5;
+    color: #0b0e1a;
+}
+
+.btn-outline-secondary {
+    color: #C5CED5;
+    border-color: #263640;
+    background-color: #151E26;
+}
+
+.btn-outline-secondary:hover
+{
+    background-color: #263640;
+    border-color: #263640;
+    color: #ffffff;
+}
+.btn-outline-secondary.active {
+    background-color: #2DD4BF;
+    border-color: #2DD4BF;
+    color: #0b0e1a;
+}
+
+.btn-outline-primary {
+    color: #2DD4BF;
+    border-color: #2DD4BF;
+}
+
+.btn-outline-primary:hover {
+    background-color: #2DD4BF;
+    border-color: #2DD4BF;
+    color: #0b0e1a;
+}
+
+.btn-outline-danger {
+    color: #ff6b6b;
+    border-color: #ff6b6b;
+}
+
+.btn-outline-danger:hover {
+    background-color: #ff6b6b;
+    border-color: #ff6b6b;
+    color: #ffffff;
+}
+
+.btn-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.btn-group > .btn {
+    border-radius: 8px !important;
+    margin: 0 !important;
+    font-size: 15px;
+    padding: 5px 5px;
+}
+
+@media (max-width: 576px) {
+    .btn-group > .btn {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+}
+
+/* ---- table ---- */
+.table {
+    color: #C5CED5;
+    background-color: #151E26;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.table thead th {
+    background-color: #1a2733;
+    color: #ffffff;
+    border-bottom: 1px solid #263640;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.table td, .table th {
+    border-color: #263640;
+    vertical-align: middle;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+    background-color: #17222c;
+    color: #C5CED5;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+    background-color: #151E26;
+    color: #C5CED5;
+}
+
+.table-responsive {
+    border-radius: 8px;
+}
+
+.text-muted {
+    color: #71808C !important;
+}
+
+/* ---- status badges ---- */
+.badge {
+    font-weight: 600;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.bg-warning {
+    background-color: #E0A83E !important;
+    color: #0b0e1a !important;
+}
+
+.bg-info {
+    background-color: #3ABEDB !important;
+    color: #0b0e1a !important;
+}
+
+.bg-success {
+    background-color: #2DD4BF !important;
+    color: #0b0e1a !important;
+}
+
+.bg-secondary {
+    background-color: #45525c !important;
+    color: #ffffff !important;
+}

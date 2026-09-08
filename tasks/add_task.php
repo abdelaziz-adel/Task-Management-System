@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
         $stmt->execute([$title, $description, $status, $assigned_to, $due_date]);
 
-        header('Location: tasks.php');
+        header('Location: ../tasks.php');
         exit;
     }
 }
@@ -48,6 +48,7 @@ $users = $stmt->fetchAll();
 <title>Add Task</title>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="../css/dashboardStyleSheet.css">
+<link rel="stylesheet" href="../css/addTaskStyleSheet.css">
 </head>
 <body>
 
@@ -56,12 +57,13 @@ $users = $stmt->fetchAll();
         <img src="../assets/TM_logo.svg" alt="Logo">
     </a>
     <div class="nav-links">
-        <a href="tasks.php" class="active">Tasks</a>
+        <a href="../tasks.php" style="color: #2DD4BF">Tasks</a>
         <a href="../profile.php">Profile</a>
     </div>
 </nav>
 
 <div class="container mt-4" style="max-width: 550px;">
+    <br>
     <h1 class="h3 mb-3">Add Task</h1>
 
     <?php if (!empty($errors)): ?>
@@ -108,7 +110,7 @@ $users = $stmt->fetchAll();
         </div>
 
         <button type="submit" class="btn btn-primary">Save Task</button>
-        <a href="tasks.php" class="btn btn-outline-secondary">Cancel</a>
+        <a href="../tasks.php" class="btn btn-outline-secondary">Cancel</a>
     </form>
 </div>
 

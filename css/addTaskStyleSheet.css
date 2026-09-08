@@ -1,0 +1,54 @@
+
+
+.form-label {
+    color: #C5CED5;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.form-control,
+.form-select {
+    background-color: #151E26;
+    border: 1px solid #263640;
+    color: #ffffff;
+    padding: 10px 12px;
+    border-radius: 8px;
+}
+
+.form-control::placeholder {
+    color: #71808C;
+}
+
+.form-control:focus,
+.form-select:focus {
+    background-color: #151E26;
+    border-color: #2DD4BF;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.15rem rgba(45, 212, 191, 0.25);
+}
+
+.form-select option {
+    background-color: #151E26;
+    color: #ffffff;
+}
+
+.alert-danger {
+    background-color: #2a1616;
+    border: 1px solid #6b2b2b;
+    color: #ff8080;
+    border-radius: 8px;
+}
+
+.btn-primary {
+    background-color: #2DD4BF;
+    border-color: #2DD4BF;
+    color: #0b0e1a;
+    font-weight: 600;
+    margin-right: 6px;
+}
+
+.btn-primary:hover {
+    background-color: #24b8a5;
+    border-color: #24b8a5;
+    color: #0b0e1a;
+}
