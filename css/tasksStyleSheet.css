@@ -48,6 +48,7 @@ h1, h2, h3 {
 .btn-outline-primary {
     color: #2DD4BF;
     border-color: #2DD4BF;
+    margin-right: 6px;
 }
 
 .btn-outline-primary:hover {
